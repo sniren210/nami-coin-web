@@ -1,17 +1,10 @@
 'use client';
 
-import { motion, useMotionValue } from 'framer-motion';
+import { useMotionValue } from 'framer-motion';
 import Image from 'next/image';
-import styled from 'styled-components';
 import React, { useState, useEffect, useRef } from 'react';
 import dynamic from 'next/dynamic';
-import Comics from './comics';
-import HomeComponent from '../HomeComponent';
-import TransitionComponent from '../TransitionComponent';
 import HallComponent from '../HallComponent';
-import { HiSpeakerXMark, HiOutlineSpeakerWave } from 'react-icons/hi2';
-import ActivityLogComponent from '../ActivityLogComponent';
-import ProofConceptComponent from '../ProofConceptComponent';
 import {
   BGFOOTER,
   GRADIENT,
@@ -31,25 +24,6 @@ const GoblinPage = dynamic(() => import('@/app/(chat)/goblin-chat/page'), {
   ssr: false,
 });
 
-const StyledContainer = styled.div`
-  display: flex;
-  gap: 0rem;
-  margin-bottom: 8rem;
-  max-width: 90vw;
-  align-items: center;
-  justify-content: center;
-`;
-
-const AudioControl = styled.div`
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  z-index: 1000;
-  background: rgba(0, 0, 0, 0.5);
-  padding: 10px;
-  border-radius: 50%;
-  cursor: pointer;
-`;
 
 export default function MergedSections() {
   const [currentPage, setCurrentPage] = useState<'main' | 'comics' | 'goblin'>(
@@ -149,8 +123,8 @@ export default function MergedSections() {
     }, 2000);
   };
 
-  return <ActivityLogComponent />;
-  return <ProofConceptComponent />;
+  // return <ActivityLogComponent />;
+  // return <ProofConceptComponent />;
   if (page === 1) {
     return <HallComponent x={x} y={y} onBack={onBack} />;
   }
@@ -455,10 +429,10 @@ export default function MergedSections() {
             <div className=" border border-white p-6 rounded-lg h-60 flex flex-col justify-between">
               <div>
                 <h3 className="text-lg font-semibold mb-4">
-                  See Nami's Activity
+                  See Nami{"'"}s Activity
                 </h3>
                 <p className="text-sm mb-4">
-                  Reach out on x.com become part of NAMI's world.
+                  Reach out on x.com become part of NAMI{"'"}s world.
                 </p>
               </div>
               <a href="#" className="text-white border p-2 hover:underline">
